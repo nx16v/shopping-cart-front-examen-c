@@ -1,0 +1,104 @@
+:root {
+  --primary-color: #1976d2;
+  --primary-hover: #1565c0;
+  --text-color: #333;
+  --heading-color: #0d47a1;
+  --bg-gradient-start: #e3f2fd;
+  --bg-gradient-end: #ffffff;
+  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --radius: 15px;
+  --transition: 0.3s ease;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.navbar {
+  box-shadow: var(--shadow-default);
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-default);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.modal-content {
+  border-radius: var(--radius);
+  border: none;
+  padding: 1rem;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: white;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
